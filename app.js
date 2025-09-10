@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
 
-app.post('/javascript/obfuscate', (req, res) => {
+app.post('/api/obfuscate', (req, res) => {
   const {
     code, target, preset, stringEncoding, stringConcealing, stringCompression,
     stringSplitting, integrity, renameVariables, renameGlobals, movedDeclarations,
@@ -48,13 +48,13 @@ app.post('/javascript/obfuscate', (req, res) => {
     shuffle: shuffle,
     stack: stack,
     identifierGenerator: function () {
-      return "$_THANHDIEUx待" + Math.random().toString(36).substring(7);
+      return "$_KHANGAPIx康" + Math.random().toString(36).substring(7);
     },
   }).then(obfuscated => {
     const endTime = Date.now();
     const executionTime = ((endTime - startTime) / 1000).toFixed(1);
     const author = `/**
-* Obf.ThanhDieu.Com Online Obfuscation Javascript :)
+* KhangApi.Com Online Obfuscation Javascript
 * Obfuscate At: ${new Date().toLocaleTimeString()} ${new Date().toLocaleDateString()}
 * Preset: ${preset}
 * Execution time: ${executionTime}s
